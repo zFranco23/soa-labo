@@ -2,9 +2,10 @@
 var debug = require('debug')('git-service');
 var app = require('../app');
 
-app.set('port', process.env.PORT || 3000);
+const PORT = process.env.PORT || 3000;
+app.set('port', PORT);
 
 var server = app.listen(app.get('port'), function() {
-  console.log('Hola');
+  console.log('Server on PORT ', PORT);
   debug('Express server listening on port ' + server.address().port);
 });
